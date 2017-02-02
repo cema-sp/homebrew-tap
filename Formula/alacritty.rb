@@ -11,7 +11,7 @@ class Alacritty < Formula
       odie "Only HEAD build is supported at time"
     end
 
-    cargo_home = Pathname.new(ENV.fetch("CARGO_HOME", ENV.fetch("CURL_HOME", ".")))/".cargo"
+    cargo_home = Pathname.new(ENV["CARGO_HOME"] || "#{ENV.fetch("CURL_HOME", ".")}/.cargo")
     unless cargo_home.exist?
       odie "Could not find 'cargo' installation dir neither in CARGO_HOME nor in HOME"
     end
