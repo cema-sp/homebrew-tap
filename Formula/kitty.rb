@@ -4,7 +4,7 @@ class Kitty < Formula
   revision 1
   head "https://github.com/cema-sp/kitty.git", :using => :git
 
-  depends_on :python3
+  depends_on "python"
   depends_on "glfw"
   depends_on "pkg-config" => :build
 
